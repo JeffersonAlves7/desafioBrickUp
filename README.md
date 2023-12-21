@@ -38,9 +38,8 @@ npm run build
 ## Reconhecimentos
 
 - Back-end:
-  - [Axios](https://axios-http.com/docs/intro)
-  - [Webpack](https://webpack.js.org/concepts/)
-  - [Typescript](https://www.typescriptlang.org/docs/)
+  - [Java](https://docs.oracle.com/en/java/)
+  - [SpringBoot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 - Banco de dados:
   - [MySQL](https://dev.mysql.com/doc/)
 - Front-end:
