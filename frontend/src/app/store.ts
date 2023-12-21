@@ -1,17 +1,20 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import { todosReducer } from "../features/todos/todosSlice";
+import { configureStore } from "@reduxjs/toolkit";
+import createSagaMiddleware from "redux-saga";
+import mySaga from "./sagas";
+import { todosReducer } from "../todos/reducer";
+
+export const sagaMiddleware = createSagaMiddleware();
+const middleware = [sagaMiddleware];
 
 export const store = configureStore({
   reducer: {
     todos: todosReducer,
   },
+  // @ts-ignore
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleware),
 });
 
-export type AppDispatch = typeof store.dispatch;
+sagaMiddleware.run(mySaga);
+
 export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  Action<string>
->;

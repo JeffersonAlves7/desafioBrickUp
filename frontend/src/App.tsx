@@ -1,6 +1,5 @@
 import { Breadcrumb, Layout, theme } from "antd";
-import { Todos } from "./features/todos/Todos";
-
+import Todos from "./todos/Todos";
 const { Header, Content, Footer } = Layout;
 
 const App = () => {
@@ -9,7 +8,11 @@ const App = () => {
   } = theme.useToken();
 
   return (
-    <Layout>
+    <Layout
+      style={{
+        minHeight: "100vh",
+      }}
+    >
       <Header style={{ display: "flex", alignItems: "center" }}>
         <h1 style={{ color: "white" }}>Todo</h1>
       </Header>
@@ -40,7 +43,6 @@ const App = () => {
             borderRadius: borderRadiusLG,
           }}
         >
-          TodoList
           <Todos />
         </div>
       </Content>
